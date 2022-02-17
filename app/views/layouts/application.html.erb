@@ -11,8 +11,13 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= yield %>
+    <div class="navbar">
+      <div class="container">
+        <%= image_tag 'logo.jpeg', width: 40 %>
+        <%= link_to 'My Lists', lists_path %>
+      </div>
     </div>
+
+    <%= yield %>
   </body>
 </html>
