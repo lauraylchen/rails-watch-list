@@ -1,0 +1,19 @@
+<div class="banner">
+  <h1>Save any kind of movies</h1>
+  <h2>Classic</h2>
+</div>
+
+<div class="row justify-content-between">
+  <h2 class="col-2">My List</h2>
+  <%= link_to "Create a movie list", new_list_path, class: "btn btn-success col-3" %>
+</div>
+
+<div class="row">
+  <% @lists.each do |list| %>
+    <div class="col-4">
+      <div class="list-card">
+        <h3><%= link_to list.name, list_path(list) %></h3>
+      </div>
+    </div>
+  <% end %>
+</div>

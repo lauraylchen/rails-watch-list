@@ -1,0 +1,21 @@
+<div class="banner">
+  <h1><%= @list.name %></h1>
+</div>
+
+<div>
+</div>
+
+<div class="row">
+  <% @list.movies.each do |movie| %>
+    <div class="col-6">
+      <div class="movie-card">
+        <%= image_url movie.poster_url %>
+        <div class="d-flex">
+          <h4><%= movie.title %></h4>
+          <h4><%= movie.rating %></h4>
+        </div>
+        <p><%= movie.overview %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
