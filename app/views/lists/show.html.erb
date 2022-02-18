@@ -1,25 +1,39 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key %>')">
+<div class="banner position-relative" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @list.photo.key %>')">
   <div class="container">
+    <h4 class="">
+      <span class="position-absolute top-0 end-0 badge bg-info">
+        <%= @list.movies.count %> Movies
+      </span>
+    </h4>
     <h1><%= @list.name %></h1>
   </div>
 </div>
 
 
 <div class="container">
-  <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-success" %>
-  <div class="row">
+  <div class="d-flex justify-content-end">
+    <%= link_to "Add a movie", new_list_bookmark_path(@list), class: "btn btn-info mb-3" %>
+  </div>
+  <div class="row flex-wrap">
     <% @list.bookmarks.each do |bookmark| %>
       <div class="col-6">
-        <div class="movie-card">
+        <div class="card my-3">
           <% movie = bookmark.movie %>
           <%= image_tag movie.poster_url %>
-          <div class="d-flex">
-            <h4><%= movie.title %></h4>
-            <h4><%= movie.rating %></h4>
+          <div class="card-body">
+            <div class="d-flex">
+              <h4 class="card-title me-3"><%= movie.title %></h4>
+              <h4><%= movie.rating %> <i class="fas fa-star text-info"></i></h4>
+            </div>
+            <p class="card-text"><%= movie.overview %></p>
           </div>
-          <p><%= movie.overview %></p>
-          <p><%= bookmark.comment %></p>
-          <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
+          <div class="comment d-flex justify-content-between p-3">
+            <div class="d-flex">
+              <i class="fas fa-quote-left pe-2"></i>
+              <p class="m-0"><%= bookmark.comment %></p>
+            </div>
+            <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          </div>
         </div>
       </div>
     <% end %>
