@@ -1,0 +1,19 @@
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    &:hover {
+      color: rgb(190, 48, 48);
+    }
+  }
+}

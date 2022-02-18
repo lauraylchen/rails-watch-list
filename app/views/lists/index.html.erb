@@ -14,7 +14,7 @@
   <div class="row">
     <% @lists.each do |list| %>
       <div class="col-4">
-        <div class="list-card">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path list.photo.key %>')">
           <h3><%= link_to list.name, list_path(list) %></h3>
         </div>
       </div>
