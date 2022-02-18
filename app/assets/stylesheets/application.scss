@@ -11,3 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-color: rgb(44, 44, 44);
+}
+
+h1, h2, label {
+  color: rgb(219, 219, 219);
+}
