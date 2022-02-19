@@ -11,7 +11,7 @@
     <%= link_to "Create a movie list", new_list_path, class: "btn btn-info" %>
   </div>
 
-  <div class="row flex-wrap justify-content-between">
+  <div class="row flex-wrap">
     <% @lists.each do |list| %>
       <div class="col-4">
         <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path list.photo.key %>')">
